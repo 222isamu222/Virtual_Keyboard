@@ -1,0 +1,82 @@
+/*---------------背景-----------------*/
+.keyboard{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #004134;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    user-select: none;
+    transition: bottom 0.4s;
+    height: 30%;
+}
+
+/*---------------非表示設定-----------------*/
+.keyboard--hidden{
+    bottom: -100%;
+}
+
+
+/*--------------キーの基本設定------------------*/
+.keyboard_keys{
+    text-align: center;
+}
+
+.keyboard_key{
+    height: 45px;
+    width: 6%;
+    max-width: 90px;
+    margin: 4px;
+    border-radius: 4px;
+    border: none;
+    background:rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    font-size: 1.05rme;
+    outline: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: top;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+}
+
+.keyboard_key:active{
+    background:rgba(255, 255, 255, 0.12);
+}
+
+
+/*--------------特殊なキーの設定---------------*/
+.keyboard_key--wide{
+    width: 12%;
+}
+
+.keyboard_key-extra--wide{
+    width: 36%;
+    max-width: 500px;
+}
+
+.keyboard_key-activatable::after{
+    content: '';
+    top: 10px;
+    right: 10px;
+    position: absolute;         /* <= キーの基本設定でposition: relativeとしているため動作する*/
+    width: 8px;
+    height: 8px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+}   
+    
+.keyboard_key-active:after{
+background:#08ff00;
+}
+
+.keyboard_key-dark{
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.text{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
